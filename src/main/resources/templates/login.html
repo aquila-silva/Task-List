@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script th:src="@{/js/visual-login-register.js}" defer></script>
+    <title>Tasks - Entre ou Cadastre-se</title>
+</head>
+<body>
+
+    <!-- CONTAINER CENTRAL DA TELA -->
+    <div class="container-central">
+        
+        <!-- ABAS FIXAS NO TOPO -->
+        <div class="abas">
+            <h3 id="hLogin" class="aba-login">Entrar</h3>
+            <h3 id="hCadastro" class="aba-cadastro">Cadastre - se</h3>
+        </div>
+
+        <!-- CARD DE CADASTRO -->
+        <div class="cadastro" id="cadastro">
+            <div class="form" id="cadastroForm">
+
+                <form action="/cadastro" method="post" th:object="${usuario}">
+
+                    <div>
+                        <label for="username">Usuario: </label>
+                        <input type="text" name="username" th:field="*{username}">
+                    </div>
+                    <div>
+                        <label for="pass">Senha: </label>
+                        <input type="password" name="pass" th:field="*{pass}">
+                    </div>
+                    <div>
+                        <input type="submit" value="Cadastrar" id="btnCadastro">
+                    </div>
+                    
+                </form>
+                <p style="color: green;" th:text="${confirm}"></p>
+                <p style="color: red;" th:text="${erro}"></p>
+                
+            </div>
+        </div>
+
+        <!-- CARD DE LOGIN -->
+        <div class="login" id="login">
+            <div class="form" id="loginForm">
+                <form action="/login" method="post" th:object="${usuario}">
+                    <div>
+                        <label for="username">Usuario: </label>
+                        <input type="text" name="username" th:field="*{username}">
+                    </div>
+                    <div>
+                        <label for="pass">Senha: </label>
+                        <input type="password" name="pass" th:field="*{pass}">
+                    </div>
+                    <div>
+                        <input type="submit" value="Entrar" id="btnEntrar">
+                        <p style="color: red;" th:text="erroLogin"></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

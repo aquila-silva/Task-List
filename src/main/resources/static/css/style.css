@@ -1,0 +1,257 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --primario-base: rgb(225, 239, 255);
+    --secundaria-base: rgb(51, 28, 83);
+}
+
+body {
+    background-color: var(--primario-base);
+    height: 100vh;
+    position: relative;
+}
+
+/* CONTAINER PRINCIPAL CENTRALIZADO NA TELA */
+.container-central {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow:   5px 5px 10px rgba(0, 0, 0, 0.322);
+}
+
+/* CONTAINER DAS ABAS LADO A LADO */
+.abas {
+    display: flex;
+    justify-content: space-between; /* Empurra uma para cada ponta */
+    width: 100%;
+}
+
+h3 {
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    padding: 8px;
+    font-family: sans-serif;
+}
+h3, label{
+    font-weight: bold;
+}
+
+/* ESTILOS ESPECÍFICOS DAS ABAS */
+.aba-cadastro {
+    background-color: var(--secundaria-base);
+    color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.aba-login {
+    background-color: White;
+    color: var(--secundaria-base);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+/* ESTILO DOS FORMULÁRIOS */
+
+
+.cadastro .form {
+    background-color: var(--secundaria-base);
+    color: white;
+}
+
+.login .form {
+    color: var(--secundaria-base);
+    background-color: white;
+}
+
+.form {
+    padding: 10px;
+    height: 350px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+input[type="button"] {
+    display: block;
+    width: 50%;
+    margin: 20px auto 0 auto;
+    padding: 8px !important;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+p{
+    text-align: center;
+}
+.cadastro input[type="button"]{
+    background-color: var(--primario-base);
+    color: var(--secundaria-base);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.login input[type="button"]{
+    background-color: var(--secundaria-base);
+    color: var(--primario-base);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cadastro input[type="button"]:hover, .login input[type="button"]:hover{
+    background-color: rgb(162, 255, 32);
+    color: rgb(91, 67, 0);
+
+}
+
+input{
+    padding: 10px;
+    border: 1px solid var(--secundaria-base);
+    background-color: var(--primario-base);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/*-------------------------INDEX.HMTL----------------------*/
+
+nav ul{
+    position: fixed;
+    min-width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to bottom, var(--secundaria-base), rgba(0,0,0,0) 100%);
+}
+nav a:link, nav a:visited {
+    display: block;
+    padding: 10px 15px;
+    margin: 5px 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.503);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    background-color: rgba(255, 0, 0, 0.349);
+}
+nav li:last-child{
+    position: absolute;
+    right: 10px;
+}
+
+
+footer > div {
+    background: linear-gradient(to top, var(--secundaria-base), rgba(0,0,0,0) 100%);
+    display: flex;
+    height: 90px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+}
+footer p{
+    text-shadow: -1px 0px 0 var(--secundaria-base) ;
+    font-size: 10px;
+    display: block;
+    margin: 0;
+    color: var(--primario-base);
+}
+
+section{
+    margin: auto;
+    padding: 20px;
+    min-height: 150px;
+    max-width: 900px;
+}
+
+section h2{
+    text-align: center;
+    color: var(--secundaria-base);
+}
+.cadastrarTarefa > div{
+    border: 1px solid rgb(255, 249, 249);
+    border-radius: 10px;
+    background: linear-gradient(to bottom, rgb(234, 221, 255) 1%, rgb(208, 219, 255) 100%);;
+}
+
+h1{
+    text-align: center;
+    color: var(--secundaria-base);
+    padding: 30px;
+    font-size: 24px;
+}
+.btnApelido, .btnCadastrarTAF{
+    display: block;
+    padding: 10px !important;
+    color: var(--primario-base);
+    background-color: var(--secundaria-base);
+    width: max-content !important;
+    font-weight: bold;
+}
+.btnApelido:hover, .btnCadastrarTAF:hover{
+    background-color: blueviolet;
+}
+.apresentacao b{
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.apresentacao{
+    background: linear-gradient(to top,var(--primario-base) -20%           , white 100%);
+}
+.tafCadastrada{
+    flex-direction: column;
+}
+.tafCadastrada input{ 
+    background-color: rgb(145, 12, 12);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.tafCadastrada input:hover{
+    background-color: red;
+}
+.tafCadastrada li{
+    border: 1px solid rgba(0, 0, 0, 0.264);
+    border-radius: 10px;
+    margin: 15px 0px;
+    padding: 20px 5px;
+}
+.tafCadastrada ul{
+    list-style: none;
+}
+.tafCadastrada li:nth-last-of-type(odd){
+    background: linear-gradient(to top, rgb(234, 234, 255) 0, white 100%);
+}
+.tafCadastrada li:nth-last-of-type(even){
+    background: linear-gradient(to bottom, rgb(255, 235, 234) 0, white 100%);
+}
+.tafCadastrada li:nth-last-of-type(last){
+    margin-bottom: 90px;
+}
+.cadastrarTarefa select{
+    background-color: var(--primario-base);
+    padding: 10px;
+    border-radius: 5px;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Lista de Tarefas</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="" id="sair">Sair</a></li>
+                <li><a href="" id="excluir">Excluir Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="apresentacao">
+            <h1 id="hBoasVindas"></h1>
+            <input type="button" value="Trocar Apelido" id="btnApelido" class="btnApelido">
+        </section>
+        <section class="cadastrarTarefa">
+            
+            <h2>Cadastrar Tarefa</h2>
+            <div>
+                <form>
+                    <div>
+                        <label>Nome da tarefa:</label>
+                        <input type="text" id="nomeTAF">
+                    </div>
+                    <div>
+                        <label>
+                            Prazo estipulado para conclusão: 
+                            <details>
+                                <summary>(?)</summary>
+                                <p style="font-size: 12px;">Determine uma data especifica em que você se compromete em finalizar a tarefa.</p>
+                            </details>
+                        </label>
+                        <input type="date" id="prazo">
+                    </div>
+                    <div>
+                        <label for="prioridade">Nível de Prioridade:</label>
+                        <select name="prioridade" id="prioridade">
+                            <option value="" disabled selected>Selecione um nível</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Moderada">Moderada</option>
+                            <option value="Baixa">Baixa</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p id="txtConCadastro"></p>
+                        <input type="button" value="Cadastrar Tarefa" id="BtnCadastrarTAF" class="btnCadastrarTAF">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+        <section class="listaTarefas">
+            <h2>Lista de Tarefas</h2>
+            <div id="tafVazia">
+                <p>Nenhuma tarefa cadastrada por enquanto</p>
+            </div>
+            <div id="tafCadastrada" class="tafCadastrada">
+                <input type="button" value="Limpar Lista" id="btnLimpar">
+                <ul id="listaTAF">
+
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <p>Projeto pessoal desenvolvido por Aquila Fernando Alves Silva</p>
+        </div>  
+    </footer>
+</body>
+</html>
