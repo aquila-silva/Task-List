@@ -55,6 +55,7 @@ public class LoginController {
         }
 
         model.addAttribute("erroLogin", "Login inválido! Usuario ou senha incorretos.");
+        usuarioLogado.login(usuario);
         
         return "login";
     }
@@ -83,8 +84,9 @@ public class LoginController {
 
 
     @PostMapping("/sair")
-    public String Sair() {
-        
+    public String Sair(Model model) {
+        model.addAttribute("usuario", new Usuario());
+
         usuarioLogado.sair();
 
         return "login";
