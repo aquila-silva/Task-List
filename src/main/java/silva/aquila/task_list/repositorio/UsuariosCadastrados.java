@@ -18,12 +18,12 @@ public class UsuariosCadastrados{
 
     public String cadastro(String username, String pass){
         
-        if(username == "" || pass == ""){
+        if(username.equals("") || pass.equals("")){
             return "1";
         }
 
         for(int i = 0; i<usuariosCadastrados.size(); i++){
-            if(usuariosCadastrados.get(i).getUsername() == username){
+            if(usuariosCadastrados.get(i).getUsername().equals(username)){
                 return "2";
             }
         }
@@ -37,8 +37,8 @@ public class UsuariosCadastrados{
     public boolean login(String username, String pass){
 
         for (int i = 0; i<usuariosCadastrados.size(); i++){
-            if(usuariosCadastrados.get(i).getUsername() == username
-            && usuariosCadastrados.get(i).getPass() == pass)
+            if(usuariosCadastrados.get(i).getUsername().equals(username)
+            && usuariosCadastrados.get(i).getPass().equals(pass))
             return true;
         }
 

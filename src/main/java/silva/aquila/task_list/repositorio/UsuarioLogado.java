@@ -7,7 +7,7 @@ import silva.aquila.task_list.dominio.Usuario;
 @Repository 
 public class UsuarioLogado {
     
-    private Usuario usuarioLogado;
+    private Usuario usuarioLogado = new Usuario();
 
     public UsuarioLogado(){
 
@@ -23,5 +23,10 @@ public class UsuarioLogado {
 
     public Usuario getLogado(){
         return  usuarioLogado;
+    }
+
+    public void sair(){
+      usuarioLogado.setUsername("");
+      usuarioLogado.setPass("");
     }
 }

@@ -27,14 +27,23 @@ public class LoginController {
     public String inicio(Model model) {
         model.addAttribute("usuario", new Usuario());
 
-        return "login";
+        if(usuarioLogado.getLogado().getUsername().equals("")){
+            return "login";
+        }
+
+        return "home";
     }
     
     @GetMapping("/login")
     public String inicioLogin(Model model) {
+
         model.addAttribute("usuario", new Usuario());
 
-        return "login";
+        if(usuarioLogado.getLogado().getUsername().equals("")){
+            return "login";
+        }
+
+        return "home";
     }
 
     @PostMapping("/login")
@@ -58,18 +67,30 @@ public class LoginController {
 
         String validaLogin = usuariosCadastrados.cadastro(usuario.getUsername(), usuario.getPass());
 
-        if (validaLogin == "0") {
+        if (validaLogin.equals("0")) {
             model.addAttribute("confirm", "Cadastro realizado com sucesso!");
             model.addAttribute("erro", "");
-        }else if(validaLogin == "1"){
+        }else if(validaLogin.equals("1")){
             model.addAttribute("confirm", "");
             model.addAttribute("erro", "Cadastro Inválido! Preencha todos os campos");
-        }else if(validaLogin == "2"){
+        }else if(validaLogin.equals("2")){
             model.addAttribute("confirm", "");
             model.addAttribute("erro", "Cadastro Inválido! Usuario já Cadastrado");
         }
 
-        return "redirect:/login";
+        return "login";
     }
+
+
+    @PostMapping("/sair")
+    public String Sair() {
+        
+        usuarioLogado.sair();
+
+        return "login";
+        
+  
+    }
+    
 
 }
